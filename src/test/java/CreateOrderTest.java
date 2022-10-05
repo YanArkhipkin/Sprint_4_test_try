@@ -12,6 +12,7 @@ import ru.yandex.praktikum.model.DeliverPageWhoIsScooterFor;
 
 @RunWith(Parameterized.class)
 public class CreateOrderTest {
+
     //private ChromeDriver driver;
     //на хроме тест падает, поэтому использовался Firefox
     private FirefoxDriver driver;

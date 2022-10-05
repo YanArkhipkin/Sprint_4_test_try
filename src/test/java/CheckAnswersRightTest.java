@@ -9,6 +9,7 @@ import static org.hamcrest.CoreMatchers.is;
 
 
 public class CheckAnswersRightTest {
+
     //В каждом тесте проверяется правильность текстов в ответах
     private ChromeDriver driver;
     private final static String URL = "https://qa-scooter.praktikum-services.ru/";
