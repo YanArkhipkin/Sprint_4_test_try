@@ -11,7 +11,6 @@ public class DeliverPageAboutRent {
 
     //Поле Дата
     private final static By DELIVER_DATE = By.xpath("//input[@placeholder='* Когда привезти самокат']");
-    private final static By CHOOSE_DELIVER_DATE = By.cssSelector("#root > div > div.Order_Content__bmtHS > div.Order_Form__17u6u > div.Order_MixedDatePicker__3qiay > div.react-datepicker__tab-loop > div.react-datepicker-popper > div > div > div.react-datepicker__month-container > div.react-datepicker__month > div:nth-child(2) > div.react-datepicker__day.react-datepicker__day--007.react-datepicker__day--selected");
     //Поле Число дней
     private final static By DURATION_OF_DAYS = By.className("Dropdown-placeholder");
     private final static By CHOOSE_DURATION_OF_DAYS = By.xpath("//div[@class=\"Dropdown-menu\"]/div[text()='двое суток']");

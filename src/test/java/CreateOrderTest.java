@@ -69,6 +69,7 @@ public class CreateOrderTest {
         orderSecondPage.middleOrderButtonCLick();
         orderSecondPage.confirmOrderClick();
 
+        //Проверяется, что заголовок на окне с завершением заказа отображается после совершения заказа
         Assert.assertTrue("Expected display modal window Order created", driver.findElement(ORDER_PLACED_WINDOW).isDisplayed());
     }
 
