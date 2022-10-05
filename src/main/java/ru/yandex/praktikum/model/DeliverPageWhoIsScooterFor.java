@@ -19,7 +19,7 @@ public class DeliverPageWhoIsScooterFor {
     private final static By DELIVER_ADDRESS = By.xpath("//input[@placeholder='* Адрес: куда привезти заказ']");
     //Поле Станция метро и ее выбор
     private final static By METRO_STATION = By.xpath("//input[@placeholder='* Станция метро']");
-    //private final static By CHOOSE_METRO_STATION = By.xpath("div[@class='select-search__select']/ul/li/button/div[2]");
+
     //Поле Телефон
     private final static By PHONE_NUMBER = By.xpath("//input[@placeholder='* Телефон: на него позвонит курьер']");
 
@@ -51,7 +51,6 @@ public class DeliverPageWhoIsScooterFor {
         new WebDriverWait(driver, 2);
         driver.findElement(METRO_STATION).sendKeys(Keys.DOWN);
         driver.findElement(METRO_STATION).sendKeys(Keys.ENTER);
-        //driver.findElement(CHOOSE_METRO_STATION).click();
     }
 
     public void phoneNumberSendKeys(String phoneNumber) {

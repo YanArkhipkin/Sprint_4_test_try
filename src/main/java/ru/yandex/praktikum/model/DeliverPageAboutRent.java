@@ -48,6 +48,4 @@ public class DeliverPageAboutRent {
         driver.findElement(CONFIRM_ORDER).click();
     }
 
-
-
 }
