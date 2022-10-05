@@ -8,6 +8,7 @@ import ru.yandex.praktikum.model.MainPage;
 import static org.hamcrest.CoreMatchers.is;
 
 
+
 public class CheckAnswersRightTest {
 
     //В каждом тесте проверяется правильность текстов в ответах

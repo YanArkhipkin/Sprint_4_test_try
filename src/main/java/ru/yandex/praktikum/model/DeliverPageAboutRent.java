@@ -32,7 +32,6 @@ public class DeliverPageAboutRent {
         driver.findElement(DELIVER_DATE).sendKeys(Keys.ENTER);
     }
 
-
     public void chooseDurationOfDays() {
         driver.findElement(DURATION_OF_DAYS).click();
         new WebDriverWait(driver, 3).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class=\"Dropdown-menu\"]")));
