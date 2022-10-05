@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DeliverPageAboutRent {
     private WebDriver driver;
-
     //Поле Дата
     private final static By DELIVER_DATE = By.xpath("//input[@placeholder='* Когда привезти самокат']");
     //Поле Число дней

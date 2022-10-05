@@ -16,7 +16,6 @@ public class CreateOrderTest {
     //на хроме тест падает, поэтому использовался Firefox
     private FirefoxDriver driver;
     private final static String URL = "https://qa-scooter.praktikum-services.ru/";
-
     //Модальное окно Заказ оформлен
     private final static By ORDER_PLACED_WINDOW = By.className("Order_ModalHeader__3FDaJ");
     private String firstName;

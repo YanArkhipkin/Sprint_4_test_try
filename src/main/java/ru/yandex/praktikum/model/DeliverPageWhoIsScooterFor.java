@@ -10,7 +10,6 @@ public class DeliverPageWhoIsScooterFor {
 
     //Кнопка Заказать
     private final static By HEADER_ORDER_BUTTON = By.xpath("//div[@class='Header_Nav__AGCXC']/button[@class='Button_Button__ra12g']");
-
     //Поле Имя
     private final static By FIRST_NAME = By.xpath("//input[@placeholder='* Имя']");
     //Поле Фамилия
