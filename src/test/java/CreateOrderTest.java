@@ -1,10 +1,8 @@
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.yandex.praktikum.model.DeliverPageAboutRent;
@@ -12,14 +10,11 @@ import ru.yandex.praktikum.model.DeliverPageWhoIsScooterFor;
 
 @RunWith(Parameterized.class)
 public class CreateOrderTest {
+    //на хроме тест падает
+    private FirefoxDriver driverFirefox;
+    private ChromeDriver driver;
+    //Модальное окно Заказ оформлен
 
-    //private ChromeDriver driver;
-    //на хроме тест падает, поэтому использовался Firefox
-    private FirefoxDriver driver;
-    private final static String URL = "https://qa-scooter.praktikum-services.ru/";
-
-    //Модальное окно "Заказ оформлен"
-    private final static By ORDER_PLACED_WINDOW = By.className("Order_ModalHeader__3FDaJ");
     private String firstName;
     private String lastName;
     private String deliverAddress;
@@ -40,17 +35,13 @@ public class CreateOrderTest {
         };
     }
 
-    @Before
-    public void setUp() {
-        //WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.gecko.driver", "C:\\WebDriver\\bin\\firefoxDriver\\geckodriver.exe");
-        driver = new FirefoxDriver();
-        driver.get(URL);
-        new WebDriverWait(driver, 3);
-    }
-
     @Test
-    public void createOrdersWithDifferentDataTest() {
+    public void createOrdersWithDifferentDataChromeTest() {
+        System.setProperty("webdriver.chrome.driver", "C:\\WebDriver\\bin\\chromedriver.exe");
+        ChromeDriver driver = new ChromeDriver();
+        driver.get("https://qa-scooter.praktikum-services.ru/");
+        new WebDriverWait(driver, 3);
+
         DeliverPageWhoIsScooterFor orderFirstPage = new DeliverPageWhoIsScooterFor(driver);
         orderFirstPage.headerOrderButtonClick();
         orderFirstPage.firstNameSendKeys(firstName);
@@ -70,13 +61,44 @@ public class CreateOrderTest {
         orderSecondPage.middleOrderButtonCLick();
         orderSecondPage.confirmOrderClick();
 
-        //Проверяется, что заголовок на окне с завершением заказа отображается после совершения заказа
-        Assert.assertTrue("Expected display modal window Order created", driver.findElement(ORDER_PLACED_WINDOW).isDisplayed());
+        //Проверяется наличие кнопки Посмотреть статус после завершения заказа
+        driver.findElement(By.xpath("//div[@class='Order_NextButton__1_rCA']/button[text()='Посмотреть статус']")).isDisplayed();
+
+        driver.quit();
+
     }
 
-    @After
-    public void tearDown() {
-        driver.quit();
+
+    @Test
+    public void createOrdersWithDifferentDataFirefoxTest() {
+        System.setProperty("webdriver.gecko.driver", "C:\\WebDriver\\bin\\firefoxDriver\\geckodriver.exe");
+        driverFirefox = new FirefoxDriver();
+        driverFirefox.get("https://qa-scooter.praktikum-services.ru/");
+        new WebDriverWait(driverFirefox, 3);
+
+        DeliverPageWhoIsScooterFor orderFirstPage = new DeliverPageWhoIsScooterFor(driverFirefox);
+        orderFirstPage.headerOrderButtonClick();
+        orderFirstPage.firstNameSendKeys(firstName);
+        orderFirstPage.lastNameSendKeys(lastName);
+        orderFirstPage.deliverAddressSendKeys(deliverAddress);
+        orderFirstPage.chooseMetroStation();
+        orderFirstPage.phoneNumberSendKeys(phoneNumber);
+        orderFirstPage.nextButtonClick();
+
+        new WebDriverWait(driverFirefox, 2);
+
+        DeliverPageAboutRent orderSecondPage = new DeliverPageAboutRent(driverFirefox);
+        orderSecondPage.chooseDeliverDate();
+        new WebDriverWait(driverFirefox, 2);
+        orderSecondPage.chooseDeliverDate();
+        orderSecondPage.chooseDurationOfDays();
+        orderSecondPage.middleOrderButtonCLick();
+        orderSecondPage.confirmOrderClick();
+
+        //Проверяется наличие кнопки Посмотреть статус после завершения заказа
+        driverFirefox.findElement(By.xpath("//div[@class='Order_NextButton__1_rCA']/button[text()='Посмотреть статус']")).isDisplayed();
+
+        driverFirefox.quit();
     }
 
 }

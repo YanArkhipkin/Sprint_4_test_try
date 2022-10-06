@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 public class MainPage {
     private WebDriver driver;
-
     //Кнопка Принять куки
     private final static By COOKIE_CONFIRM_BUTTON = By.id("rcc-confirm-button");
 
