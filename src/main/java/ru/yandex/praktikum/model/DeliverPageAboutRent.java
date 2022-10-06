@@ -20,7 +20,6 @@ public class DeliverPageAboutRent {
     //Кнопка Да
     private final static By CONFIRM_ORDER = By.xpath("//div[@class='Order_Buttons__1xGrp']/button[text()='Да']");
 
-    private final static By CHECK_ORDER_STATUS = By.xpath("//div[@class='Order_NextButton__1_rCA']/button[text()='Посмотреть статус']");
     public DeliverPageAboutRent(WebDriver driver) {
         this.driver = driver;
     }
