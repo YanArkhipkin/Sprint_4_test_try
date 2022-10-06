@@ -8,6 +8,7 @@ public class MainPage {
     private final static By COOKIE_CONFIRM_BUTTON = By.id("rcc-confirm-button");
 
     //Вопросы и ответы
+
     //Сколько это стоит? И как оплатить?
     private final static By HOW_IT_COST = By.id("accordion__heading-0");
     private final static By HOW_IT_COST_ANSWER = By.xpath("//*[@id=\"accordion__panel-0\"]/p");

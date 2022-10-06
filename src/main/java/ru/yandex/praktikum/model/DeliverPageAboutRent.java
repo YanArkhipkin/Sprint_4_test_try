@@ -8,16 +8,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DeliverPageAboutRent {
     private WebDriver driver;
-    //Поле Дата
+    //Поле "Дата"
     private final static By DELIVER_DATE = By.xpath("//input[@placeholder='* Когда привезти самокат']");
-    //Поле Число дней
+    //Поле "Число дней"
     private final static By DURATION_OF_DAYS = By.className("Dropdown-placeholder");
     private final static By CHOOSE_DURATION_OF_DAYS = By.xpath("//div[@class=\"Dropdown-menu\"]/div[text()='двое суток']");
 
-    //Кнопка Заказать
+    //Кнопка "Заказать"
     private final static By MIDDLE_ORDER_BUTTON = By.xpath("//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']");
 
-    //Кнопка Да
+    //Кнопка "Да"
     private final static By CONFIRM_ORDER = By.xpath("//div[@class='Order_Buttons__1xGrp']/button[text()='Да']");
 
     public DeliverPageAboutRent(WebDriver driver) {

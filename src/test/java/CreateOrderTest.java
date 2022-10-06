@@ -10,12 +10,11 @@ import ru.yandex.praktikum.model.DeliverPageWhoIsScooterFor;
 
 @RunWith(Parameterized.class)
 public class CreateOrderTest {
-
     //на хроме тест падает
     private FirefoxDriver driverFirefox;
     private ChromeDriver driver;
     //Модальное окно Заказ оформлен
-    private final String ORDER_SUCCESS_TEXT = "Заказ оформлен";
+
     private String firstName;
     private String lastName;
     private String deliverAddress;
