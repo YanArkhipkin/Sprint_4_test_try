@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.yandex.praktikum.model.DeliverPageAboutRent;
 import ru.yandex.praktikum.model.DeliverPageWhoIsScooterFor;
 
+
 @RunWith(Parameterized.class)
 public class CreateOrderTest {
     //на хроме тест падает

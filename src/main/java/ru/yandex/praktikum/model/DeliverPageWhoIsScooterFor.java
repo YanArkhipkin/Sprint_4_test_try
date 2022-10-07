@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DeliverPageWhoIsScooterFor {
     private WebDriver driver;
-
     //Кнопка "Заказать"
     private final static By HEADER_ORDER_BUTTON = By.xpath("//div[@class='Header_Nav__AGCXC']/button[@class='Button_Button__ra12g']");
 
